@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | Cafe Saba (UED100 prototype)</title>
+  <!-- Fixes F12: the live site has no meta description -->
+  <meta name="description" content="Contact Cafe Saba: address, phone and a message form.">
+  <!-- Adds a "js" class so the mobile menu only collapses when JavaScript is running -->
+  <script>document.documentElement.classList.add("js");</script>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <!-- Skip link: first focusable item, lets keyboard users jump past the nav (kept from live site, F4) -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Cafe Saba</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="nav-toggle-label">Menu</span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="bookings.html">Bookings</a></li>
+          <li><a href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <div class="container">
+      <h1>Contact us</h1>
+
+      <section aria-labelledby="visit-h" class="info-card">
+        <h2 id="visit-h">Visit us</h2>
+        <p>7/47 The Parade, Norwood SA</p>
+        <p>Phone: <a href="tel:+61800000000">(08) 0000 0000</a> [sample number]</p>
+        <p>Opening hours: [same sample hours as the Home page]</p>
+      </section>
+
+      <section aria-labelledby="msg-h">
+        <h2 id="msg-h">Send us a message</h2>
+        <p>For reservations, please use the <a href="bookings.html">booking page</a>.</p>
+        <form class="form" data-validate novalidate aria-label="Contact form">
+          <p id="form-summary" class="error-summary" role="alert" hidden></p>
+        <div class="field">
+          <label for="name">Name <span class="req">(required)</span></label>
+          <input id="name" name="name" type="text" autocomplete="name" required aria-required="true" aria-describedby="name-error">
+          <p id="name-error" class="error" hidden></p>
+        </div>
+        <div class="field">
+          <label for="email">Email <span class="req">(required)</span></label>
+          <input id="email" name="email" type="email" autocomplete="email" required aria-required="true" aria-describedby="email-error">
+          <p id="email-error" class="error" hidden></p>
+        </div>
+        <div class="field">
+          <label for="subject">Subject</label>
+          <input id="subject" name="subject" type="text" aria-describedby="subject-error">
+          <p id="subject-error" class="error" hidden></p>
+        </div>
+          <div class="field">
+            <label for="message">Message <span class="req">(required)</span></label>
+            <textarea id="message" name="message" rows="5" required aria-required="true" aria-describedby="message-error"></textarea>
+            <p id="message-error" class="error" hidden></p>
+          </div>
+          <button class="button" type="submit">Send message</button>
+        </form>
+        <p id="form-success" class="success" role="status" hidden></p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>7/47 The Parade, Norwood SA</p>
+      <p class="fineprint">Student prototype for UED100 Assessment 2. All dishes, prices and text are sample content written for this prototype, not the real Cafe Saba menu.</p>
+    </div>
+  </footer>
+  <script src="js/nav.js" defer></script>
+  <script src="js/form-validate.js" defer></script>
+</body>
+</html>

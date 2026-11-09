@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home | Cafe Saba (UED100 prototype)</title>
+  <!-- Fixes F12: the live site has no meta description -->
+  <meta name="description" content="Vietnamese food on The Parade, Norwood. See opening hours, browse the menu and book a table.">
+  <!-- Adds a "js" class so the mobile menu only collapses when JavaScript is running -->
+  <script>document.documentElement.classList.add("js");</script>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <!-- Skip link: first focusable item, lets keyboard users jump past the nav (kept from live site, F4) -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Cafe Saba</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="nav-toggle-label">Menu</span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="bookings.html">Bookings</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <div class="container">
+      <h1>Welcome to Cafe Saba</h1>
+
+      <p class="lead">Vietnamese food in Norwood. [Write your own one-sentence intro here.]</p>
+
+      <!-- Fixes F7: hours and phone are real text near the top, with a tel: link -->
+      <section class="info-card" aria-labelledby="hours-h">
+        <h2 id="hours-h">Opening hours and contact</h2>
+        <dl class="hours">
+          <div><dt>Monday to Friday</dt><dd>[Sample: 11:00 am to 9:00 pm]</dd></div>
+          <div><dt>Saturday and Sunday</dt><dd>[Sample: 11:00 am to 10:00 pm]</dd></div>
+        </dl>
+        <p>Phone: <a href="tel:+61800000000">(08) 0000 0000</a> [sample number]</p>
+        <!-- Fixes F6: ONE clear booking route, outside the slideshow -->
+        <p><a class="button" href="bookings.html">Book a table</a></p>
+      </section>
+
+      <!-- Fixes F5: slideshow with a real pause button. Behaviour lives in js/slideshow.js. -->
+      <section class="slideshow" aria-roledescription="carousel" aria-label="Food and cafe photos" data-slideshow>
+        <h2>From our kitchen</h2>
+        <div class="slides">
+          <!-- Replace each figure's placeholder with an <img> that has real alt text (fixes F3) -->
+          <figure class="slide" data-slide>
+            <div class="placeholder" role="img" aria-label="Placeholder: bowl of pho">Photo 1</div>
+            <figcaption>Pho [sample caption]</figcaption>
+          </figure>
+          <figure class="slide" data-slide hidden>
+            <div class="placeholder" role="img" aria-label="Placeholder: bun bowl">Photo 2</div>
+            <figcaption>Bun bowl [sample caption]</figcaption>
+          </figure>
+          <figure class="slide" data-slide hidden>
+            <div class="placeholder" role="img" aria-label="Placeholder: banh mi">Photo 3</div>
+            <figcaption>Banh mi [sample caption]</figcaption>
+          </figure>
+        </div>
+        <div class="slide-controls">
+          <button type="button" data-prev>Previous</button>
+          <button type="button" data-playpause aria-pressed="false">Pause</button>
+          <button type="button" data-next>Next</button>
+        </div>
+        <p class="sr-only" aria-live="polite" data-slide-status></p>
+      </section>
+
+      <section aria-labelledby="explore-h">
+        <h2 id="explore-h">Explore</h2>
+        <p><a href="menu.html">See the full menu</a> or <a href="contact.html">get in touch</a>.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>7/47 The Parade, Norwood SA</p>
+      <p class="fineprint">Student prototype for UED100 Assessment 2. All dishes, prices and text are sample content written for this prototype, not the real Cafe Saba menu.</p>
+    </div>
+  </footer>
+  <script src="js/nav.js" defer></script>
+  <script src="js/slideshow.js" defer></script>
+</body>
+</html>
