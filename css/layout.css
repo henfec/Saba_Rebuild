@@ -1,0 +1,33 @@
+/* layout.css: page structure and the responsive nav. Mobile-first: base styles are for phones,
+   then @media (min-width) adds the wider layouts. Breakpoints: 40em (about 640px) and 60em (about 960px). */
+.container { width: 100%; max-width: 62rem; margin: 0 auto; padding: 0 1rem; }  /* 16px side gutter */
+
+.skip-link { position: absolute; left: .5rem; top: -4rem; background: var(--text); color: #fff; padding: .75rem 1rem; z-index: 100; border-radius: var(--radius); }
+.skip-link:focus { top: .5rem; }
+
+.site-header { background: var(--bg-soft); border-bottom: 1px solid var(--border); }
+.header-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem; padding-top: .5rem; padding-bottom: .5rem; }
+.brand { font-size: 1.375rem; font-weight: 700; color: var(--text); text-decoration: none; padding: .5rem 0; min-height: 44px; display: inline-flex; align-items: center; }
+
+/* Mobile nav toggle: only shown when JavaScript is running */
+.nav-toggle { display: none; min-height: 44px; min-width: 44px; padding: .5rem 1rem; font: inherit; background: #fff; color: var(--text); border: 2px solid var(--text); border-radius: var(--radius); cursor: pointer; }
+.js .nav-toggle { display: inline-block; }
+
+.site-nav { width: 100%; }
+.site-nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.site-nav a { display: flex; align-items: center; min-height: 44px; padding: .5rem .75rem; color: var(--text); text-decoration: none; border-radius: var(--radius); }
+.site-nav a:hover { background: #fff; }
+.site-nav a[aria-current="page"] { font-weight: 700; border-bottom: 3px solid var(--accent); border-radius: 0; }
+.js .site-nav[data-collapsed="true"] { display: none; }
+
+main { padding-bottom: 2rem; }
+.site-footer { background: var(--bg-soft); border-top: 1px solid var(--border); padding: 1.5rem 0; margin-top: 2rem; }
+.site-footer p { margin: 0 0 .5rem; }
+
+@media (min-width: 40em) {
+  .js .nav-toggle { display: none; }
+  .site-nav { width: auto; }
+  .site-nav ul { flex-direction: row; gap: .25rem; }
+  .js .site-nav[data-collapsed="true"] { display: block; }  /* nav always visible on wider screens */
+  h1 { font-size: 2.5rem; }
+}
