@@ -18,5 +18,24 @@ Open `index.html` in a browser. No build step and no libraries.
 F2 headings, F3 alt text, F5 slideshow pause, F6 one booking route, F7 hours as text, F8 static menu,
 F9 accessible form, F11 contrast, F12 meta description.
 
-## Credits and AI use
-[Photo credits here.] [AI acknowledgement: paste the same statement as in the report.]
+## AI Acknowledgement
+
+I used **Claude (Anthropic), Sonnet 5.5** while preparing this assessment.
+
+**How it was used**
+- Drafted the starter HTML, CSS and JavaScript.
+- Wrote and ran automated tests (Playwright, Lighthouse, axe-core and html-validate) and suggested fixes.
+- Helped draft the report text and the tables of findings.
+
+**Parts of the work affected**
+- The starter version of the prototype code.
+- Parts A and B of the report, and Appendices 1 and 2.
+
+**How I checked and changed the output**
+- Replaced the placeholder text.
+- Added my own photos.
+- Built my own Figma wireframes.
+- Checked all findings against my own saved pages.
+- Reviewed all references to make sure they are valid.
+
+The same statement appears in my Assessment 2 report.
