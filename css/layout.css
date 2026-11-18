@@ -18,7 +18,10 @@
 .site-nav a { display: flex; align-items: center; min-height: 44px; padding: .5rem .75rem; color: var(--text); text-decoration: none; border-radius: var(--radius); }
 .site-nav a:hover { background: #fff; }
 .site-nav a[aria-current="page"] { font-weight: 700; border-bottom: 3px solid var(--accent); border-radius: 0; }
-.js .site-nav[data-collapsed="true"] { display: none; }
+/* On phones the nav starts closed in the CSS itself, so it never flashes open and then collapses when the script runs.
+   (That flash moved the whole page up: Lighthouse layout shift 0.201 on mobile.) JS only sets data-collapsed to "false" to open it. */
+.js .site-nav { display: none; }
+.js .site-nav[data-collapsed="false"] { display: block; }
 
 main { padding-bottom: 2rem; }
 .site-footer { background: var(--bg-soft); border-top: 1px solid var(--border); padding: 1.5rem 0; margin-top: 2rem; }
@@ -28,6 +31,6 @@ main { padding-bottom: 2rem; }
   .js .nav-toggle { display: none; }
   .site-nav { width: auto; }
   .site-nav ul { flex-direction: row; gap: .25rem; }
-  .js .site-nav[data-collapsed="true"] { display: block; }  /* nav always visible on wider screens */
+  .js .site-nav { display: block; }  /* nav always visible on wider screens */
   h1 { font-size: 2.5rem; }
 }

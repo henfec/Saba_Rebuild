@@ -14,6 +14,11 @@
 .slide { margin: 0; }
 .placeholder { display: grid; place-items: center; aspect-ratio: 16 / 9; background: #e9e2d3; color: var(--text-muted); border-radius: var(--radius); font-weight: 600; }
 .slide figcaption { margin-top: .5rem; color: var(--text-muted); }
+/* Every slide photo is cropped to the same 16:9 box, so the page does not jump in height when the slide changes
+   (found by test IMG2: the three photos were 534, 585 and 450 px tall). Matches the width/height set in the HTML. */
+.slide img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: var(--radius); }
+/* Phone links are at least 44px tall so they are easy to tap (found by test K9; WCAG 2.5.8, F11) */
+a[href^="tel"] { display: inline-flex; align-items: center; min-height: 44px; }
 .slide-controls { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .5rem; }
 .slide-controls button { min-height: 44px; min-width: 44px; padding: .5rem 1rem; background: #fff; border: 2px solid var(--text); border-radius: var(--radius); cursor: pointer; }
 .slide-controls button:hover { background: var(--bg-soft); }
@@ -34,6 +39,8 @@
 .tags { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: .25rem; margin: .5rem 0 0; }
 .tag { font-size: .8125rem; padding: .125rem .5rem; border: 1px solid var(--accent); border-radius: 999px; color: var(--accent-dark); }
 .status { color: var(--text-muted); }
+/* Reserve the line for the result count so it does not push the dishes down when the script fills it in (layout shift) */
+#menu-status { min-height: 1.6em; }
 
 /* ----- Forms ----- */
 .form { max-width: 34rem; }
